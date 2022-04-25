@@ -1,0 +1,35 @@
+:root {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+body {
+    margin: 0;
+}
+.headerWrap {
+    display: flex;
+    border: red solid 1px;
+    justify-content: center;
+    font-size: 2em;
+}
+.gameContainer {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 50px;
+    grid-gap: 3px;
+    background-color: #555;
+}
+.gridSquare {
+    /* height: 100%; */
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.roundInfo {
+    display: flex;
+    justify-content: center;
+    border: red solid 1px;
+    height: 3rem;
+    color: black;
+}
