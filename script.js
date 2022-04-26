@@ -5,31 +5,35 @@ const gameBoard = (() => {
     let gameBoardGrid = ["","","","","","","","",""]
     // cache the DOM elements needed and render
     let currentPlayer = "Player 1"
+    let playerMarker = "X"
     let roundInfo = document.querySelector(".roundInfo");
-    roundInfo.textContent = `${currentPlayer}, it's your turn. You are CURRENTMARKER`
-
-
+    roundInfo.textContent = `${currentPlayer}, it's your turn. You are X`
+    
     const _createGameBoard = () => {
+            
         gameContainer = document.querySelector(".gameContainer");
         for (let i=0;i<gameBoardGrid.length;i++) {
             let gridSquare = document.createElement('div');
             gridSquare.setAttribute("id",`${i}`)
             gridSquare.classList.add("gridSquare")
             gameContainer.appendChild(gridSquare)
-            gridSquare.addEventListener("click", () => {
-                gridSquare.textContent = "X"//current player marker
+            gridSquare.addEventListener("click",() => {
+            if (gridSquare.textContent == "") {    
                 if (currentPlayer == "Player 1") {
                     currentPlayer = "Player 2";
-                    roundInfo.textContent = `${currentPlayer}, it's your turn. You are CURRENTMARKER`
-                }else {currentPlayer = "Player 1";
-                    roundInfo.textContent = `${currentPlayer}, it's your turn. You are CURRENTMARKER`;
-                    console.log(currentPlayer) 
-            }
-            })
+                    gridSquare.textContent = playerMarker
+                    playerMarker = "O"
+                    roundInfo.textContent = `${currentPlayer}, it's your turn. You are ${playerMarker}`
+                }else  {currentPlayer = "Player 1";
+                        gridSquare.textContent = playerMarker   
+                        playerMarker = "X"
+                        roundInfo.textContent = `${currentPlayer}, it's your turn. You are ${playerMarker}`;   
+                        } 
+            }}
+            )}
+            
         }
-    }   
-
-    _createGameBoard()
+        _createGameBoard()
 })()
 
 const playerCreator = (player, marker) => {
