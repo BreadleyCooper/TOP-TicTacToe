@@ -59,17 +59,17 @@ const gameBoard = (() => {
                     gameBoardGrid.splice(i,1,"X")
                     
                     gridSquare.classList.toggle("X")
-                    _checkWin(); 
+                    _checkWin();
                     currentPlayer = "Player 2";
                     playerMarker = "O"
                     roundInfo.textContent = `${currentPlayer}, it's your turn. You are "${playerMarker}"`
                     
 
-                }else  {currentPlayer = "Player 1";
+                }else  {
                         gameBoardGrid.splice(i,1,"O")
-                        
                         gridSquare.classList.toggle("O")
-                        _checkWin(); 
+                        _checkWin();
+                        currentPlayer = "Player 1";
                         playerMarker = "X"
                         roundInfo.textContent = `${currentPlayer}, it's your turn. You are "${playerMarker}"`;   
                         
@@ -234,9 +234,10 @@ const gameBoard = (() => {
         }
         
             const _win = () => { 
+                won = true
                 overlayResult.textContent = `The winner is ${currentPlayer}!`
                 toggleWinOverlay()
-                won = true
+                
                 
                 }  
             
@@ -245,9 +246,6 @@ const gameBoard = (() => {
     
         
 })()
-
-
-
 
 
 const playerCreator = (player, marker) => {
