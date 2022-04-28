@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 :root {
     font-family: sans-serif;
     font-size: 20px;
@@ -8,7 +11,8 @@ body {
 .headerWrap {
     display: flex;
     justify-content: center;
-    font-size: 2em;
+    font-size: 4em;
+    font-family: "Indie Flower", cursive;
 }
 .gridContainer {
   display: flex;
@@ -20,33 +24,50 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     justify-content: center;
-    margin: 50px;
+    margin: 50px; 
     grid-gap: 3px;
     background-color: #555;
-    height: 400px;
-    width: 400px;
-    
+    height: 70vw;
+    width: 70vw;
+    max-width: 1000px;
+    max-height: 1000px;
+   
+}
+.header {
+    height: 50px
+
 }
 .gridSquare {
     /* height: 100%; */
     width: 100%;
     aspect-ratio: 1;
-    background-color: #ddd;
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
 .gridSquare.X {
-  background-color: red;
-  color: red;
+    background-image: url(SVGs/cross-mark-svgrepo-com.svg);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 .gridSquare.O {
-  background-color: blue;
-    color: blue;
+    background-image: url(SVGs/letter-o-svgrepo-com.svg);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 .roundInfo {
     display: flex;
     justify-content: center;
     height: 3rem;
     color: black;
+    font-family: "Indie Flower", cursive;
+    font-size: 1.8em;
+    margin-bottom: 50px;
+    text-align: center;
+    
 }
 .gameResultOverlay {
     position:absolute;
@@ -64,23 +85,45 @@ body {
                 opacity 500ms ease-in-out,
                 height 0ms ease-in-out 500ms;
 }
-
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100vw;
+}
 .result {
-  position: absolute;
-  top: 20%;
-  right: 45%;
-  font-size: 3rem;
-  color: red
+    /* position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center; */
+    font-size: 3rem;
+    color: #E0CA3C;
+    font-family: "Indie Flower", cursive;
+    font-weight: bold;
+    /* transform: translate(-50%, -50%); */
+}
+.btnContainer {
+    padding-top: 100px;
 }
 .playAgain {
-    position:absolute;
-    top: 50%;
-    right: 38%;
+    /* position:absolute;
+    top: 40%;
+    right: 38%; */
     color: #fff;
-    font-size: 5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     cursor:pointer;
-    color: red
+    color: #E0CA3C;
+    background-color: #344966;
+    height: 100px;
+    border-radius: 10px;
+    font-family: "Indie Flower", cursive;
+    border-style: none;
+    box-shadow: none;
 }
 
 body.activeForm .gameResultOverlay {
