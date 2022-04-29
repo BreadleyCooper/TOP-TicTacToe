@@ -31,6 +31,7 @@ const gameBoard = (() => {
             roundInfo.textContent = `${currentPlayer}, it's your turn. You are "${playerMarker}"`
         }
         _createGameBoard();
+        console.log(won,tie)
 
     }
 
@@ -40,7 +41,8 @@ const gameBoard = (() => {
 
 
     const _createGameBoard = () => {
-
+        won = false;
+        tie = false;
 
         for (let i = 0; i < gameBoardGrid.length; i++) {
 
